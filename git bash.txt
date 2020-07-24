@@ -1,0 +1,147 @@
+
+kavrin@Vaio MINGW32 ~
+$ ssh-keygen -t rsa -C 'kavrin@gmail.com'
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/kavrin/.ssh/id_rsa):
+Created directory '/c/Users/kavrin/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/kavrin/.ssh/id_rsa
+Your public key has been saved in /c/Users/kavrin/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:vo1RPvp24onuFVCluuwJN4gpCS69FpYVuMc6m5Cxh54 kavrin@gmail.com
+The key's randomart image is:
++---[RSA 3072]----+
+|   .      ...    |
+|  . .    . .     |
+|   o .  . .      |
+|. . +    o       |
+|.= =    S o      |
+|*oB. o + + .     |
+|o===o o B +      |
+|.E+o   + @oo.    |
+| ..    oX+=o     |
++----[SHA256]-----+
+
+kavrin@Vaio MINGW32 ~
+$ git config --global user.name "Dmytro Kavrin"
+
+kavrin@Vaio MINGW32 ~
+$ git config --global user.email^CDmytro Kavrin"
+
+kavrin@Vaio MINGW32 ~
+$ git config --global user.email "kavrin@gmail.com"
+
+kavrin@Vaio MINGW32 ~
+$ git config --global user.email
+kavrin@gmail.com
+
+kavrin@Vaio MINGW32 ~
+$ cd /f/222/
+
+kavrin@Vaio MINGW32 /f/222
+$ git clone git@github.com:kavrin/epam_demo.git
+Cloning into 'epam_demo'...
+The authenticity of host 'github.com (140.82.118.3)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com,140.82.118.3' (RSA) to the list of known hosts.
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+
+kavrin@Vaio MINGW32 /f/222
+$ cd epam_demo
+
+kavrin@Vaio MINGW32 /f/222/epam_demo (master)
+$ git remote -v
+origin  git@github.com:kavrin/epam_demo.git (fetch)
+origin  git@github.com:kavrin/epam_demo.git (push)
+
+kavrin@Vaio MINGW32 /f/222/epam_demo (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        song.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+kavrin@Vaio MINGW32 /f/222/epam_demo (master)
+$ git add song.txt
+
+kavrin@Vaio MINGW32 /f/222/epam_demo (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   song.txt
+
+
+kavrin@Vaio MINGW32 /f/222/epam_demo (master)
+$ git commit -m "add sonnet # 2"
+[master 77b9c81] add sonnet # 2
+ 1 file changed, 14 insertions(+)
+ create mode 100644 song.txt
+
+kavrin@Vaio MINGW32 /f/222/epam_demo (master)
+$ git log
+commit 77b9c812b52b26c20c65269daffe72ad1cde23cb (HEAD -> master)
+Author: Dmytro Kavrin <kavrin@gmail.com>
+Date:   Fri Jul 24 17:08:55 2020 +0300
+
+    add sonnet # 2
+
+commit af7c76fc3115508cf381dc3109eeb810a37826a4 (origin/master, origin/HEAD)
+Author: kavrin <kavrin@gmail.com>
+Date:   Fri Jul 24 16:59:48 2020 +0300
+
+    Initial commit
+
+kavrin@Vaio MINGW32 /f/222/epam_demo (master)
+$ git push
+Warning: Permanently added the RSA host key for IP address '140.82.118.4' to the list of known hosts.
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 639 bytes | 639.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To github.com:kavrin/epam_demo.git
+   af7c76f..77b9c81  master -> master
+
+kavrin@Vaio MINGW32 /f/222/epam_demo (master)
+$ git log
+commit 77b9c812b52b26c20c65269daffe72ad1cde23cb (HEAD -> master, origin/master, origin/HEAD)
+Author: Dmytro Kavrin <kavrin@gmail.com>
+Date:   Fri Jul 24 17:08:55 2020 +0300
+
+    add sonnet # 2
+
+commit af7c76fc3115508cf381dc3109eeb810a37826a4
+Author: kavrin <kavrin@gmail.com>
+Date:   Fri Jul 24 16:59:48 2020 +0300
+
+    Initial commit
+
+kavrin@Vaio MINGW32 /f/222/epam_demo (master)
+$ git pull
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 1.29 KiB | 5.00 KiB/s, done.
+From github.com:kavrin/epam_demo
+   77b9c81..4436c6b  master     -> origin/master
+Updating 77b9c81..4436c6b
+Fast-forward
+ song.txt | 21 ++++++++++++++++++++-
+ 1 file changed, 20 insertions(+), 1 deletion(-)
+
+kavrin@Vaio MINGW32 /f/222/epam_demo (master)
+$
